@@ -85,5 +85,7 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. Supaya memungkinkan akses bersama ke Vec tersebut dari banyak thread tanpa mengorbankan kinerja. RwLock<> memungkinkan banyak pembaca untuk mengakses data secara bersamaan, sementara hanya satu penulis yang dapat mengubahnya pada satu waktu. Ini meminimalkan waktu tunggu dan memastikan konsistensi data. Mutex<> tidak digunakan karena Mutex<> hanya mengizinkan satu thread untuk mengakses data pada satu waktu, baik itu untuk membaca atau menulis.
 
+2. Pada Rust, variabel static tidak boleh di-mutate secara langsung karena Rust menetapkan aturan ketat untuk memastikan memory safety dan menghindari race condition. Dengan demikian, Rust tidak mengizinkan mutate langsung pada variabel static.
 #### Reflection Subscriber-2
