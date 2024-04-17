@@ -89,3 +89,8 @@ This is the place for you to write reflections:
 
 2. Pada Rust, variabel static tidak boleh di-mutate secara langsung karena Rust menetapkan aturan ketat untuk memastikan memory safety dan menghindari race condition. Dengan demikian, Rust tidak mengizinkan mutate langsung pada variabel static.
 #### Reflection Subscriber-2
+1. Ya, saya sudah meng-explore codes di src/lib.rs, yang mana pada file tersebut terdapat codes untuk configure application, membuat permintaan HTTP dari aplikasi, membuat respons HTTP kustom yang berisi informasi tentang error, dll.
+
+2. Pola Observer memudahkan untuk menyematkan lebih banyak pelanggan karena memisahkan publisher (main app) dari subscriber (Receiver). Setiap instance Receiver bertindak secara independen sebagai pengamat, mendengarkan pembaruan dari aplikasi Utama tanpa perlu pengetahuan langsung tentang pelanggan lainnya. Hal ini memungkinkan arsitektur yang fleksibel dan dapat diskalakan di mana pelanggan tambahan dapat ditambahkan atau dihapus tanpa memengaruhi fungsionalitas inti dari aplikasi Utama. Ketika menambahkan lebih dari satu instance main app, menambahkannya ke sistem masih dapat dilakukan dengan relatif mudah, terutama jika main app dirancang untuk dapat diskalakan secara horizontal.
+
+3. Saya belum mencoba fitur tersebut, tetapi saya tertarik untuk mencoba fitur tersebut, mungkin di group project atau project-project selanjutnya. 
